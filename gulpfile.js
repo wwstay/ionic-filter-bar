@@ -29,9 +29,9 @@ gulp.task('scripts', function() {
   ])
     .pipe(concat('ionic.filter.bar.js'))
     .pipe(gulp.dest(paths.dist))
-    .pipe(uglify())
-    .pipe(rename({ extname: '.min.js' }))
-    .pipe(gulp.dest(paths.dist));
+    // .pipe(uglify())
+    // .pipe(rename({ extname: '.min.js' }))
+    // .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('sass', function(done) {

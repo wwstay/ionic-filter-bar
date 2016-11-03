@@ -125,10 +125,11 @@
             favoritesTitle: 'Favorite Searches',
             favoritesAddPlaceholder: 'Add a search term',
             favoritesEnabled: false,
-            favoritesKey: 'ionic_filter_bar_favorites'
+            favoritesKey: 'ionic_filter_bar_favorites',
+            data: {filterText: ''},
           }, opts);
 
-          scope.data = {filterText: ''};
+          // scope.data = {filterText: ''};
 
           //if no custom theme was configured, get theme of containers bar-header
           if (!scope.config.theme) {
