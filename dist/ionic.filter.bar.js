@@ -94,6 +94,7 @@ angular.module('jett.ionic.filter.bar', ['ionic']);
                     $scope.scrollItemsTop();
                     $scope.focusInput();
                   });
+                  filterItems();
                 });
               }
             };
@@ -106,12 +107,16 @@ angular.module('jett.ionic.filter.bar', ['ionic']);
 
             // When a non escape key is pressed, show/hide backdrop/clear button based on filterText length
             var keyUp = function(e) {
+              console.log(e.key);
               if (e.which == 27) {
                 cancelFilterBar();
               } else if ($scope.data.filterText && $scope.data.filterText.length) {
                 $scope.hideBackdrop();
               } else {
                 $scope.showBackdrop();
+              }
+              if (e.which === 13) {
+                filterItems();
               }
             };
 
@@ -154,7 +159,7 @@ angular.module('jett.ionic.filter.bar', ['ionic']);
 
               if (newFilterText !== oldFilterText) {
                 delay = (newFilterText.length && $scope.debounce) ? $scope.delay : 0;
-                filterTextTimeout = $timeout(filterItems, delay, false);
+                // filterTextTimeout = $timeout(filterItems, delay, false);
               }
             });
           },
